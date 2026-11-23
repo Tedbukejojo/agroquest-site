@@ -1,46 +1,134 @@
-/* Ajustes da Logo no Header */
+/* Reset e Configurações Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary-green: #6BBF59;
+    --dark-green: #4A8B3C;
+    --light-green: #E8F5E9;
+    --sky-blue: #4DB8FF;
+    --cream: #FFF3E0;
+    --dark-brown: #4E342E;
+    --text-dark: #333;
+}
+
+body {
+    background-color: var(--cream);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: var(--primary-green);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
 .logo-img {
-    height: 50px; /* Ajuste conforme o tamanho da sua imagem */
+    height: 60px; /* Ajusta o tamanho do logo */
     width: auto;
 }
 
-/* Ajustes do Hero (Personagem e Trator) */
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 1.5rem;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--dark-brown);
+}
+
+/* Hero Section */
 .hero {
-    position: relative; /* Necessário para posicionar as imagens */
+    position: relative;
+    background: linear-gradient(rgba(107, 191, 89, 0.8), rgba(77, 184, 255, 0.5));
+    padding: 6rem 5% 8rem 5%; /* Espaço extra embaixo para as imagens */
+    text-align: center;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
 }
 
+.hero-content {
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    color: var(--dark-green);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+}
+
+.btn-image img {
+    height: 70px; /* Ajusta o tamanho do botão */
+    transition: transform 0.2s;
+}
+
+.btn-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Imagens decorativas do Hero */
 .hero-character {
     position: absolute;
-    bottom: -20px;
+    bottom: 0;
     right: 5%;
-    height: 400px;
+    height: 350px;
     z-index: 1;
 }
 
 .hero-tractor {
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
     left: 5%;
     height: 150px;
     z-index: 1;
 }
 
-/* Botão com Imagem */
-.btn-image img {
-    height: 60px;
-    transition: transform 0.2s;
-}
-.btn-image img:hover {
-    transform: scale(1.05);
+/* Jogo Section */
+.game-section {
+    padding: 4rem 5%;
+    text-align: center;
+    background-color: white;
 }
 
-/* Layout da Seção do Jogo (Iframe + Placa) */
+.game-section h2, .phases-section h2, .team-section h2 {
+    color: var(--dark-green);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
 .game-layout {
     display: flex;
     gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto 2rem auto;
+    max-width: 1000px;
+    margin: 0 auto 3rem auto;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -49,6 +137,14 @@
 .game-container {
     flex: 2;
     min-width: 300px;
+    height: 400px;
+    background-color: #222;
+    border: 8px solid var(--dark-brown);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
 }
 
 .highscore-sidebar {
@@ -59,28 +155,127 @@
 
 .highscore-img {
     width: 100%;
-    max-width: 300px;
+    max-width: 250px;
 }
 
-/* Imagem de Créditos na Equipe */
-.credits-image-container {
+.download-area {
+    padding: 2rem;
+    background: var(--light-green);
+    border-radius: 15px;
+    display: inline-block;
+}
+
+.btn-drive {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #4285F4;
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 1rem;
+    transition: background 0.3s;
+}
+
+.btn-drive:hover {
+    background-color: #3367D6;
+}
+
+/* Fases Section */
+.phases-section {
+    background-color: var(--light-green);
+    padding: 4rem 5%;
     text-align: center;
+}
+
+.phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.phase-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    border-bottom: 5px solid var(--primary-green);
+}
+
+.phase-card h3 {
+    color: var(--dark-green);
+    margin-bottom: 1rem;
+}
+
+/* Equipe Section */
+.team-section {
+    padding: 4rem 5%;
+    text-align: center;
+    background-color: white;
+}
+
+.credits-image-container {
     margin-bottom: 3rem;
 }
 
 .credits-img {
-    max-width: 600px;
-    width: 100%;
+    max-width: 100%;
+    width: 600px;
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    text-align: left;
+}
+
+.team-member {
+    background: var(--cream);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    border-left: 5px solid var(--sky-blue);
+}
+
+.team-member h4 {
+    color: var(--dark-green);
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+}
+
+.team-member p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.2rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark-brown);
+    color: white;
+    text-align: center;
+    padding: 2rem;
+}
+
+footer a {
+    color: var(--sky-blue);
+    text-decoration: none;
 }
 
 /* Responsividade para Celular */
 @media (max-width: 768px) {
     .hero-character, .hero-tractor {
-        display: none; /* Esconde imagens grandes no celular para não quebrar o layout */
+        display: none; /* Esconde as imagens grandes para não quebrar o layout */
     }
-    .game-layout {
-        flex-direction: column;
-    }
+    .hero h1 { font-size: 2rem; }
+    .game-layout { flex-direction: column; }
+    header { flex-direction: column; gap: 1rem; }
+    nav a { margin: 0 0.5rem; }
 }
