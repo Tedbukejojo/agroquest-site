@@ -36,8 +36,10 @@ header {
 }
 
 .logo-img {
-    height: 60px; /* Ajusta o tamanho do logo */
+    height: 110px; /* Aumentado de 60px para 110px */
     width: auto;
+    margin-top: -15px; /* Opcional: puxa a logo um pouco para cima para compensar o tamanho */
+    margin-bottom: -15px; /* Opcional: puxa a logo um pouco para baixo */
 }
 
 nav a {
