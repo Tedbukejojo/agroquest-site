@@ -270,6 +270,157 @@ footer a {
     color: var(--sky-blue);
     text-decoration: none;
 }
+/* Seção de Eventos e Itch.io */
+.events-section {
+    padding: 4rem 5%;
+    background-color: var(--light-green);
+    text-align: center;
+}
+
+.section-desc {
+    margin-bottom: 3rem;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* Container do Itch.io */
+.itch-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    background: white;
+    padding: 2.5rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    margin-bottom: 4rem;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.itch-embed iframe {
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    max-width: 100%;
+}
+
+.itch-info {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.itch-info h3 {
+    color: var(--dark-green);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.itch-info p {
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+/* Botão do Itch.io (Estilo oficial vermelho) */
+.btn-itch {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #FA5C5C; /* Vermelho do itch.io */
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn-itch:hover {
+    background-color: #E04B4B;
+    transform: scale(1.05);
+}
+
+/* Grid de Eventos e Artigos */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.event-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.event-badge {
+    background-color: var(--sky-blue);
+    color: white;
+    padding: 0.5rem;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.event-badge.premio {
+    background-color: #FFD700;
+    color: #333;
+}
+
+.event-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.event-type {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary-green);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.event-content h3 {
+    color: var(--dark-brown);
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.event-content p {
+    color: #666;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex: 1;
+}
+
+.btn-link {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 700;
+    transition: color 0.3s;
+}
+
+.btn-link:hover {
+    color: var(--dark-green);
+    text-decoration: underline;
+}
 
 /* Responsividade para Celular */
 @media (max-width: 768px) {
